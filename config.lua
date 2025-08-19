@@ -46,6 +46,15 @@ Config.MashPerBatch = 1 -- amount of mash produced per batch run
 Config.MoonshinePerBatch = 10 -- amount moonshine produced per mash batch
 
 ---------------------------------
+-- delivery amounts
+---------------------------------
+Config.LemoyneMinDelivery   = 25
+Config.CattailMinDelivery   = 25
+Config.NewAustinMinDelivery = 25
+Config.HanoverMinDelivery   = 25
+Config.ManzanitaMinDelivery = 25
+
+---------------------------------
 -- storage (goods in/out)
 ---------------------------------
 Config.GoodsInMaxWeight = 4000000

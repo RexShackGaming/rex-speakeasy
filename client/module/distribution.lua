@@ -151,7 +151,7 @@ RegisterNetEvent('rex-speakeasy:client:deliverymenu', function(speakeasyid)
             end
 
             --Lemoyne Speakeasy
-            if currentstock >= 25 and speakeasyid == 'lemoynese' then
+            if currentstock >= Config.LemoyneMinDelivery and speakeasyid == 'lemoynese' then
                 local options = {}
                 for _,v in pairs(Config.LemoyneDeliveryLocations) do
                     options[#options + 1] = {
@@ -186,7 +186,7 @@ RegisterNetEvent('rex-speakeasy:client:deliverymenu', function(speakeasyid)
             end
 
             -- Cattail Pond
-            if currentstock >= 25 and speakeasyid == 'cattailse' then
+            if currentstock >= Config.CattailMinDelivery and speakeasyid == 'cattailse' then
                 local options = {}
                 for _,v in pairs(Config.CattailDeliveryLocations) do
                     options[#options + 1] = {
@@ -221,7 +221,7 @@ RegisterNetEvent('rex-speakeasy:client:deliverymenu', function(speakeasyid)
             end
 
             -- New Austin
-            if currentstock >= 25 and speakeasyid == 'newaustinse' then
+            if currentstock >= Config.NewAustinMinDelivery and speakeasyid == 'newaustinse' then
 
                 local options = {}
                 for _,v in pairs(Config.NewAustinDeliveryLocations) do
@@ -257,7 +257,7 @@ RegisterNetEvent('rex-speakeasy:client:deliverymenu', function(speakeasyid)
             end
 
             -- Hanover
-            if currentstock >= 25 and speakeasyid == 'hanoverse' then
+            if currentstock >= Config.HanoverMinDelivery and speakeasyid == 'hanoverse' then
 
                 local options = {}
                 for _,v in pairs(Config.HanoverDeliveryLocations) do
@@ -293,7 +293,7 @@ RegisterNetEvent('rex-speakeasy:client:deliverymenu', function(speakeasyid)
             end
 
             -- Manzanita Post
-            if currentstock >= 25 and speakeasyid == 'manzanitase' then
+            if currentstock >= Config.ManzanitaMinDelivery and speakeasyid == 'manzanitase' then
 
                 local options = {}
                 for _,v in pairs(Config.ManzanitaPostDeliveryLocations) do
