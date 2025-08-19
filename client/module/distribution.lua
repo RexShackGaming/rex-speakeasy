@@ -123,7 +123,7 @@ end)
 -- deliveries
 ---------------------------------------------
 RegisterNetEvent('rex-speakeasy:client:deliverymenu', function(speakeasyid)
-    
+
     RSGCore.Functions.TriggerCallback('rsg-lawman:server:getlaw', function(result)
 
         -- check how many lawman are on duty before starting the run
@@ -145,9 +145,13 @@ RegisterNetEvent('rex-speakeasy:client:deliverymenu', function(speakeasyid)
 
             local currentstock = result[1].stock
 
+            if currentstock < 25 then
+                lib.notify({ title = locale('cl_lang_68'), duration = 7000, type = 'error' })
+                return
+            end
+
             --Lemoyne Speakeasy
             if currentstock >= 25 and speakeasyid == 'lemoynese' then
-
                 local options = {}
                 for _,v in pairs(Config.LemoyneDeliveryLocations) do
                     options[#options + 1] = {
@@ -179,12 +183,10 @@ RegisterNetEvent('rex-speakeasy:client:deliverymenu', function(speakeasyid)
                     options = options
                 })
                 lib.showContext('lemoynese_delivery_menu')
-
             end
 
             -- Cattail Pond
             if currentstock >= 25 and speakeasyid == 'cattailse' then
-
                 local options = {}
                 for _,v in pairs(Config.CattailDeliveryLocations) do
                     options[#options + 1] = {
@@ -216,7 +218,6 @@ RegisterNetEvent('rex-speakeasy:client:deliverymenu', function(speakeasyid)
                     options = options
                 })
                 lib.showContext('cattailse_delivery_menu')
-
             end
 
             -- New Austin
@@ -253,7 +254,6 @@ RegisterNetEvent('rex-speakeasy:client:deliverymenu', function(speakeasyid)
                     options = options
                 })
                 lib.showContext('newaustinse_delivery_menu')
-
             end
 
             -- Hanover
@@ -290,7 +290,6 @@ RegisterNetEvent('rex-speakeasy:client:deliverymenu', function(speakeasyid)
                     options = options
                 })
                 lib.showContext('hanoverse_delivery_menu')
-
             end
 
             -- Manzanita Post
@@ -327,7 +326,6 @@ RegisterNetEvent('rex-speakeasy:client:deliverymenu', function(speakeasyid)
                     options = options
                 })
                 lib.showContext('manzanitase_delivery_menu')
-
             end
 
         end, speakeasyid)
